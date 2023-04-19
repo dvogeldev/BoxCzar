@@ -19,10 +19,17 @@ RUN useradd --system --create-home $user \
     && echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/$user
 USER $user
 WORKDIR /home/$user
+r
+ARG user=makepkg
+RUN useradd --system --create-home $user \
+  && echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/$user
+USER $user
+WORKDIR /home/$user
 
-RUN git clone https://aur.archlinux.org/paru.git
-    && cd paru \
-    && makepkg -si --needed --noconfirm \
+RUN git clone https://aur.archlinux.org/yay.git \
+    && cd yay \
+    && makepkg -sri --needed --noconfirm \
     && cd \
-    $$ rm -rf .cache paru
-     
+    # Clean up
+    && rm -rf .cache yay
+# Clean up cache
