@@ -16,12 +16,6 @@ RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
 
 ARG user=makepkg
 RUN useradd --system --create-home $user \
-    && echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/$user
-USER $user
-WORKDIR /home/$user
-r
-ARG user=makepkg
-RUN useradd --system --create-home $user \
   && echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/$user
 USER $user
 WORKDIR /home/$user
