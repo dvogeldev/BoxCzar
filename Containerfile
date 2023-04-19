@@ -14,5 +14,15 @@ RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \
     ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
     ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/rpm-ostree
 
+ARG user=makepkg
+RUN useradd --system --create-home $user \
+    && echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/$user
+USER $user
+WORKDIR /home/$user
 
+RUN git clone https://aur.archlinux.org/paru.git
+    && cd paru \
+    && makepkg -sri --needed --noconfirm \
+    && cd \
+    $$ rm -rf .cache paru
      
