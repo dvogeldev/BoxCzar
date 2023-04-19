@@ -20,10 +20,16 @@ RUN useradd --system --create-home $user \
 USER $user
 WORKDIR /home/$user
 
-RUN git clone https://aur.archlinux.org/yay.git \
-    && cd yay \
-    && makepkg -sri --needed --noconfirm \
+# RUN git clone https://aur.archlinux.org/yay.git \
+#     && cd yay \
+#     && makepkg -sri --needed --noconfirm \
+#     && cd \
+#     # Clean up
+#     && rm -rf .cache yay
+#     # Clean up cache
+
+RUN git clone https://aur.archlinux.org/paru.git \
+    && cd paru \
+    && makepkg -si --needed --noconfirm \
     && cd \
-    # Clean up
-    && rm -rf .cache yay
-# Clean up cache
+    && rm -rf .cache paru
