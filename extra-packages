@@ -10,9 +10,11 @@ exa
 ffmpeg
 fzf
 github-cli
+harfbuzz
 just
 lazygit
 make
+mesa
 ncdu
 ncurses
 neofetch
