@@ -22,7 +22,7 @@ WORKDIR /home/$user
 
 RUN git clone https://aur.archlinux.org/paru.git
     && cd paru \
-    && makepkg -sri --needed --noconfirm \
+    && makepkg -si --needed --noconfirm \
     && cd \
     $$ rm -rf .cache paru
      
