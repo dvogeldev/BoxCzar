@@ -9,7 +9,7 @@ COPY extra-packages /
 RUN pacman -Syu --needed --noconfirm - < extra-packages
 RUN rm /extra-packages
 RUN pacman -Scc --noconfirm
-RUN rustup install stable
+RUN rustup default stable
 
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \      
     ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
