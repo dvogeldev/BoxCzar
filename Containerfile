@@ -29,9 +29,9 @@ WORKDIR /home/$user
 #     && rm -rf .cache yay
 #     # Clean up cache
 
-RUN git clone https://aur.archlinux.org/paru.git \
-    && cd paru \
-    && rustup default stable
-    && makepkg -si \
+RUN git clone https://aur.archlinux.org/paru-bin.git --single-branch \
+    && cd paru-bin \
+    && makepkg -si --noconfirm \
     && cd \
-    && rm -rf .cache paru
+    && rm -drf paru-bin \
+    
