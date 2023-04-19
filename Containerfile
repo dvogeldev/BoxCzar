@@ -7,7 +7,7 @@ LABEL com.github.containers.toolbox="true" \
 
 COPY extra-packages /
 RUN pacman -Syu && \
-    pacman -Sy --asdeps libglvnd mesa freetype2 harfbuzz && \
+    pacman -Sy --asdeps mesa libglvnd harfbuzz freetype2 && \
     grep -v '^#' /extra-packages | xargs pacman -Sy
     RUN rm /extra-packages
 
