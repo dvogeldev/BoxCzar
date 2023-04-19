@@ -9,7 +9,6 @@ COPY extra-packages /
 RUN pacman -Syu --needed --noconfirm - < extra-packages
 RUN rm /extra-packages
 RUN pacman -Scc --noconfirm
-RUN rustup default stable
 RUN rustup update
 
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \      
@@ -32,6 +31,7 @@ WORKDIR /home/$user
 
 RUN git clone https://aur.archlinux.org/paru.git \
     && cd paru \
+    && rustup default stable
     && makepkg -si --needed --noconfirm \
     && cd \
     && rm -rf .cache paru
