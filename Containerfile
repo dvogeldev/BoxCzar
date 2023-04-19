@@ -6,10 +6,9 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="btwiusemacs@fastmail.us>"
 
 COPY extra-packages /
-RUN apk update && \
-    apk upgrade && \
-    grep -v '^#' /extra-packages | xargs apk add
-RUN rm /extra-packages
+RUN pacman -Syu && \
+    grep -v '^#' /extra-packages | xargs pacman -S
+    RUN rm /extra-packages
 
 RUN   ln -fs /bin/sh /usr/bin/sh && \
       ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/docker && \
