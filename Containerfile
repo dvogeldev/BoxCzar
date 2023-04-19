@@ -32,6 +32,6 @@ WORKDIR /home/$user
 RUN git clone https://aur.archlinux.org/paru.git \
     && cd paru \
     && rustup default stable
-    && makepkg -si --needed --noconfirm \
+    && makepkg -si \
     && cd \
     && rm -rf .cache paru
