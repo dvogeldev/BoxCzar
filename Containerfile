@@ -6,8 +6,8 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="btwiusemacs@fastmail.us>"
 
 COPY extra-packages /
-RUN pacman -Syu && \
-    grep -v '^#' /extra-packages | xargs pacman -S
+RUN sudo pacman -Syu && \
+    grep -v '^#' /extra-packages | xargs sudo pacman -S
     RUN rm /extra-packages
 
 RUN   ln -fs /bin/sh /usr/bin/sh && \
