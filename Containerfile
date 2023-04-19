@@ -6,8 +6,8 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="btwiusemacs@fastmail.us>"
 
 COPY extra-packages /
-RUN pacman -Syu && \
-    pacman -Sy --asdeps mesa libglvnd harfbuzz freetype2 && \
+RUN pacman -Sy --asdeps mesa libglvnd harfbuzz freetype2 && \
+    pacman -Syu && \
     grep -v '^#' /extra-packages | xargs pacman -Sy
     RUN rm /extra-packages
 
