@@ -3,9 +3,8 @@ atuin
 bat
 bottom
 chezmoi
-clipboard
 cosign
-dbus-x11
+dbus
 direnv
 exa
 ffmpeg
@@ -25,7 +24,6 @@ ripgrep
 skim
 speedtest-cli
 starship
-vimdiff
 wl-clipboard
 zellij
 zoxide
