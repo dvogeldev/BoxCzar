@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2023-04-19)
+
+
+### Bug Fixes
+
+* package substitions ([66f4b8e](https://github.com/dvogeldev/boxczar/commit/66f4b8ec8742914bec5de82db9ff222f77fe942d))
+
 ## 1.0.0 (2023-02-04)
 
 
