@@ -102,7 +102,6 @@ RUN git clone https://aur.archlinux.org/paru-bin.git --single-branch && \
   paru -S \
     clipboard \
     espanso-bin \
-    codeberg-cli \
     --noconfirm
 
 # Cleanup
