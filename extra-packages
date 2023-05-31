@@ -7,13 +7,11 @@ chezmoi
 cosign
 dbus
 direnv
-espanso
 exa
 fd
 fish
 ffmpeg
 fzf
-codeberg-cli
 github-cli
 just
 lazygit
