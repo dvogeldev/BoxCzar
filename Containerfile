@@ -94,7 +94,7 @@ RUN rustup update
 # Add paru and install AUR pkgs
 USER build
 WORKDIR /home/build
-RUN git clone https://aur.archlinux.org/paru.git --single-branch && \
+RUN git clone https://aur.archlinux.org/paru-bin.git --single-branch && \
   cd paru-bin && \
   makepkg -si --noconfirm && \
   cd .. && \
