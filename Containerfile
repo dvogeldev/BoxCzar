@@ -5,7 +5,7 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="btwiusemacs@fastmail.us>"
 
-COPY etc /etc
+# COPY etc /etc
 
 # Pacman Initialization
 RUN sed -i 's/#Color/Color/g' /etc/pacman.conf && \
